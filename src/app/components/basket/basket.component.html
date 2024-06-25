@@ -1,0 +1,29 @@
+<div id="basketModal" class="modal">
+    <div class="modal-content" style="width: 600px;">
+      <span class="close" style="text-align: end;" (click)="closeBasket()">&times;</span>
+      <h2 style="font-family:cursive; color: rgba(0, 0, 0, 0.714);">Basket</h2>
+      <ul>
+        <li *ngFor="let item of items$ | async">{{ item }}</li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div id="basketModal" class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Basket</h5>
+        <button type="button" class="btn-close" aria-label="Close" (click)="closeBasket()"></button>
+      </div>
+      <div class="modal-body">
+        <ul>
+          <li *ngFor="let item of items$ | async">{{ item }}</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeBasket()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

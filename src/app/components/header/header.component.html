@@ -1,0 +1,33 @@
+<header class="navbar sticky-top" style="background-color: rgb(255, 189, 214);">
+    <div class="container-fluid">
+        <div class="d-flex align-items-center justify-content-between px-5">
+            <img width="100" src="/assets/shopping.png" alt="netflix-logo">
+            <h1 class="" style="font-family:cursive; color: rgba(0, 0, 0, 0.714);">Shopping List</h1>
+        </div>
+        <div class="px-5">
+            <button class="btn btn-primary" style="background-color: transparent; border: none;" (click)="showBasket()">
+                <img width="40" src="/assets/basket.png" alt="">
+            </button>
+            &nbsp; | &nbsp;
+            <a href="/" class="" style="color: rgba(0, 0, 0, 0.714);">Signout</a>
+        </div>
+    </div>
+</header>
+
+<div id="basketModal" class="modal">
+    <div class="modal-content" style="width: 600px;">
+        <div class="modal-header" style="background-color: rgba(255, 200, 221, 0.338);">
+            <h5 class="modal-title" style="font-family:cursive; color: rgba(0, 0, 0, 0.714); font-size: xx-large;">
+                Basket</h5>
+            <button type="button" class="btn-close" aria-label="Close" (click)="closeBasket()"></button>
+        </div>
+
+        <ul>
+            <li *ngFor="let item of items$ | async">{{ item }}</li>
+        </ul>
+        <div class="modal-footer" style="background-color: rgba(255, 200, 221, 0.338);">
+            <button type="button" class="btn btn-secondary">Print</button>
+            <button type="button" class="btn btn-primary">Send</button>
+        </div>
+    </div>
+</div>
